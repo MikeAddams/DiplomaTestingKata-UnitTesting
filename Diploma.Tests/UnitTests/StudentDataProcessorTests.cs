@@ -1,11 +1,8 @@
-﻿using Castle.DynamicProxy.Generators;
-using Diploma.DataProcessing;
-using Diploma.Files;
+﻿using Diploma.Files;
 using Diploma.Models;
 using Diploma.Tests.Builder;
 using Diploma.Utils;
 using Diploma.Validators;
-using Microsoft.VisualStudio.TestPlatform.ObjectModel.Utilities;
 using NSubstitute;
 using System.Collections.Generic;
 using Xunit;
@@ -121,25 +118,3 @@ namespace Diploma.Tests.UnitTests
 
     }
 }
-
-
-
-/* // for Validator tests
-    var s1 = new StudentModel()
-    {
-        FirstName = "Florin",
-        LastName = "Turcanu",
-        Grades = new List<Subject>()
-        { 
-            new Subject() { SubjectName = "LimbaRomana", Grade = 7 } ,
-            new Subject() { SubjectName = "Limba ENgleza", Grade = 7 },
-            new Subject() { SubjectName = "Matematica", Grade = 7},
-            new Subject() { SubjectName = "Fizica", Grade = 7},
-            new Subject() { SubjectName = "Chimia", Grade = 7},
-            new Subject() { SubjectName = "Informatica", Grade = 7},
-            new Subject() { SubjectName = "Geografia", Grade = 7},
-            new Subject() { SubjectName = "Istoria", Grade = 7},
-            new Subject() { SubjectName = "Biologia", Grade = 7}
-        }
-    };
-*/
