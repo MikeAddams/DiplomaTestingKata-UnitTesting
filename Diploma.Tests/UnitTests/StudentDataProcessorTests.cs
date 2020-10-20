@@ -84,8 +84,9 @@ namespace Diploma.Tests.UnitTests
         public void LoadData_CallsCreateDiplomasAndSaveDiploma_OneTime_IfValidatorPassed_Else_NoCalls(bool validation)
         {
             // Arange
-            int nTimes = 0;
             string path = "path";
+            int nTimes = validation ? 1 : 0;
+
             var student = new StudentModel();
             var studentsList = new List<StudentModel>() { student };
             var rowStudentsList = new List<StudentRawModel> { new StudentRawModel() };
@@ -107,11 +108,6 @@ namespace Diploma.Tests.UnitTests
             sdp.LoadData(path);
 
             // Assert
-            if (validation)
-            {
-                nTimes = 1;
-            }  
-
             fileWritter.Received(nTimes).CreateDiplomas(student);
             fileWritter.Received(nTimes).SaveDiploma(fileWritter.CreateDiplomas(student), student.FirstName, student.LastName);
         }
